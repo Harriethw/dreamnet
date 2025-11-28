@@ -202,14 +202,21 @@ figure {
 
 .image-grid {
     display: grid;
+    overflow: hidden;
+    margin-top: 10vh;
     grid-template-rows: auto;
-    display: grid;
     grid-gap: 1em;
     grid-template-rows: auto;
     grid-template-columns: repeat(
         auto-fit,
         minmax(calc(var(--page-width) / 4), 1fr)
     );
+}
+
+.image-responsive {
+    max-width: 30vw;
+    max-height: 20vh;
+    object-fit: cover;
 }
 
 .terminal-prompt::after {
