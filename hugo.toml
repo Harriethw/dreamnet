@@ -1,0 +1,15 @@
+baseURL = 'https://example.org/'
+languageCode = 'en-us'
+title = 'dreamnet'
+theme = 'hugo-theme-console-hw'
+
+[params]
+description = 'what could the internet be?'
+
+	[[params.navlinks]]
+		name = "About"
+		url = "/about/"
+
+	[[params.navlinks]]
+  		name = "Posts"
+		url = "/posts/"
