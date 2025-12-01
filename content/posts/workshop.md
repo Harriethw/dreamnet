@@ -11,8 +11,8 @@ Intros
 
 ## Part 2 - 45 minutes
 Collaging and writing - 
-We will spend some time now creating three pages each of collage and writing for a manifesto zine - what would the internet be if we built it from scratch?
-Each page should be themed around these three questions:
+We will spend some time now creating three pages of collage and writing for a manifesto zine - what would the internet be if we built it from scratch?
+There three questions are the prompts, with a suggestion to use 1 page per prompt:
 
 We will have 15 minutes for each question
 1. What would its material architecture be? Where would it be? Who would be building it and maintaining it?
@@ -26,4 +26,4 @@ Once you have finished we will collect and group them around each question.
 ## Part 3 - 30 mins
 Sharing
 Together we will look at the pages we’ve made and share the meaning and thoughts behind them.
-Harriet will then share information about where the pages will be uploaded
+We will then discuss how we can share the images and ideas with the world.
