@@ -16,6 +16,8 @@ https://blog.hydroponictrash.solar/offgridinternet/
 - Travel Router or regular Router - I used a GL.iNet travel one.
 - A computer with a screen and keyboard for easy editing of files
 - Access to Wifi or 3G hotspot
+Optional:
+- Ethernet cable to connect the Pi to your home modem. I just find this an easier way to switch between the actual internet and your local wifi network.
 
 ## Setting up the Pi
 
@@ -66,7 +68,7 @@ git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke.git theme
 ```
 
 So here you will choose a theme, you can use the one above or find more here:
-https://themes.gohugo.io/. From there you can replace the git location URL and use the theme. From experience, some themes have dependencies that don’t work well on ARM architectures like the Raspberry Pi, so some might not work. Find what does and one you like.
+https://themes.gohugo.io/. These themes are used as git submodules which can be a bit tricky to understand - basically they are separate git projects within the parent git project. 
 
 Next, you will edit your main config file. That should be in your Hugo server directory called `config.toml`.
 
@@ -218,18 +220,33 @@ I found it difficult to find a recent travel router that supplied its own captiv
 
 ### Customise splash screen
 
-TODO: this
+Nodogsplash will serve a simple HTML screen from /etc/nodogsplash/htdoc/splash.html  
+you can edit it from the terminal, and make sure the button redirects to the IP of your Pi, or create a file on your computer and then copy it to the router via an scp command
+
+```bash
+scp -O root@{ip.of.router}:/etc/nodogsplash/htdoc/splash.html path/to/your/htmlfile 
+```
 
 ## Connect your server to your router
 
 ### Update wifi in dietpi
-TODO: this
 
-### Assign static IP address in router 
-And disconnect the router from the internet
-TODO: this
+```bash
+dietpi-config
+```
+running the above opens the UI for editing dietpi config. From there select Network Options: Adapters
+Select WiFi
+You can manually add your wifi networks and optional passwords.
+Add your new router's info as the first one and delete the old wifi info, or else it will try to connect to that. 
+
+**Note: This can be a bit tricky, because if the Pi loses a wifi connection you can't access it via ssh again - that's where an ethernet cable comes in handy. You also need to be on the same wifi network as the pi to ssh into it.**
+
+### Assign static IP address in router
+
+From the admin panel for your router you should be able to assign static IP's to connected devices. Find the Pi in the list and the IP connected to it and make a note of it, as it will be different to the one assigned by your other wifi.
 
 ### Update IP address on the hugo server
+
 With changes to static IP addresses, come changes to config files.
 The Pi's IP has changed as its connecting to a new network, so we have to edit the Hugo config to point to the right IP!
 
@@ -256,6 +273,7 @@ sudo systemctl start hugo.service
 ```
 
 Restart your server after confirming a few things:
+
 TODO: tidy up this
 Your server is set to automatically connect to the correct wifi, all other wifi networks are disabled from automatically connecting or forgotten.
 Your services are all set to automatically start, reboot your server and navigate to them to see if they work automatically. If not go back and check if you enabled them.
