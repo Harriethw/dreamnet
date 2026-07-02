@@ -45,9 +45,9 @@ You'll want to access the Pi via `ssh` from your terminal. E.g. `ssh root@192.16
 
 The Raspberry Pi is going to be our server. You could install almost anything you like on this - a chat server, video library, book library etc. For this experiment we’re going to serve up a simple website.  
 
-We’ll use Hugo to do this. This is mostly cribbed from the Hydroponic trash blog https://blog.hydroponictrash.solar/offgridinternet/ with a few changes at the end. 
+We’ll use Hugo to do this. This process is mostly cribbed from the Hydroponic trash blog https://blog.hydroponictrash.solar/offgridinternet/ with a few changes at the end. 
 
-**Note: I did all this on my regular laptop and IDE, and created a github repo that I then cloned on my server, or you can do directly on the server’s command line as below.**
+**Note: I did the hugo project setup on my regular laptop and IDE, and created a github repo that I then cloned on my server, or you can do directly on the server’s command line as below.**
 
 ```bash
 sudo apt-get install hugo
@@ -91,8 +91,11 @@ Next, make a post!
 hugo new posts/welcome.
 ```
 
-That will create a markdown file in `/home/youruser/offgridserver/content/posts
-nano welcome.md`
+That will create a markdown file in `/home/youruser/offgridserver/content/posts`
+
+```bash
+nano welcome.md
+```
 
 ```markdown
 ---
@@ -135,7 +138,7 @@ ExecStart=/usr/bin/hugo server --bind 0.0.0.0 --port 8080 --baseURL http://192.1
 WantedBy=multi-user.target
 ```
 
-Here we’ve told the server to run on port 80 - that’s the port that is for regular web requests, so putting the IP address into the browser will serve the website.
+Here we’ve told the server to run on port 80 - that’s the port that is for regular web requests, so putting the IP address into the browser will serve the website without the need for a port.
 
 Change the working directory to the correct one and the IP to your correct IP address. (This will be the current IP address of the pi connected to the wifi network, that you are using to ssh into)
 
@@ -234,8 +237,8 @@ scp -O root@{ip.of.router}:/etc/nodogsplash/htdoc/splash.html path/to/your/htmlf
 ```bash
 dietpi-config
 ```
-running the above opens the UI for editing dietpi config. From there select Network Options: Adapters
-Select WiFi
+
+running the above opens the UI for editing dietpi config. From there select Network Options: Adapters > Select WiFi
 You can manually add your wifi networks and optional passwords.
 Add your new router's info as the first one and delete the old wifi info, or else it will try to connect to that. 
 
@@ -274,9 +277,9 @@ sudo systemctl start hugo.service
 
 Restart your server after confirming a few things:
 
-TODO: tidy up this
-Your server is set to automatically connect to the correct wifi, all other wifi networks are disabled from automatically connecting or forgotten.
-Your services are all set to automatically start, reboot your server and navigate to them to see if they work automatically. If not go back and check if you enabled them.
-Then you can reboot the server, then use another computer or your phone to connect to your new guest wifi and see if the captive portal brings you to your hugo landing page, then to all of your new services.
+* Your server is set to automatically connect to the correct wifi, all other wifi networks are disabled from automatically connecting or forgotten.
+* Your services are all set to automatically start, reboot your server and navigate to them to see if they work automatically. If not go back and check if you enabled them.
+  
+Then you can reboot the server, then use another computer or your phone to connect to your new guest wifi and see if the captive portal brings you to your hugo landing page.
 
 And you've done it! Users who connect to your wifi should now be served our lovely website, or if they try to navigate to a site it should redirect to the one you've created.
