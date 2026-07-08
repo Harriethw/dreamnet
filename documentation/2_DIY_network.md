@@ -8,6 +8,18 @@ https://blog.hydroponictrash.solar/offgridinternet/
 
 ![Small network diagram](small_network.png)
 
+In this setup - your Raspberry Pi is going to act like a **server**. It will host a website using a minimal-coding blog library called Hugo. It could also host other things like:
+
+- A free library of PDFs
+- Photos and videos
+- An instant messaging server
+
+We’ll use a regular travel or home modem/router to act both as a modem and router, as well as to provide a DNS  and a Captive Portal functionality.
+
+This means that when our users connect to our wifi, they won’t be connected to the wider internet but instead our own little ecosystem on the Raspberry Pi server. It could be described as a Local Area Network (LAN)
+
+You could scale this by having many servers attached to the same network, as well as many antennas/nodes/routers to boost the initial signal of the network.
+
 ## What you’ll need
 
 - Raspberry Pi - I used an old 3B
