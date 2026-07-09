@@ -25,3 +25,9 @@ https://www.tucsonmesh.net/ - offering high speed internet access to their commu
 https://communitytechnology.github.io/docs/cck/ - documentation from groups working to provide community networks in Detroit and elsewhere.
 
 https://www.apc.org/en/guifinet - Guifi.net is an independent initiative in Spain
+
+Read on...
+
+[1. What is the internet?](./1_what_is_the_internet.md)
+[2. How to DIY a Network](./2_DIY_network.md)
+[3. More reading](./3_more_reading.md)
