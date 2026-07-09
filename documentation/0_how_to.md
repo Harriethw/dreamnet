@@ -12,6 +12,8 @@ If you are curious about the idea of building your own server, setting up a wifi
 
 That said, I won’t be explaining every step in detail - I’m assuming some knowledge of things like using command line interfaces, how to edit files in the terminal, and a basic mental model of a raspberry pi/installing software via ssh. If you do get stuck don’t panic! Making mistakes and breaking things is a great way to learn, and the answer is probably a short search or youtube video away. I’m also happy to answer any questions - you can contact me on harriethw at gmail dot com or on mastodon at https://mas.to/@harriethw 
 
+**If you'd like a printable zine, you can find them here [zines](./zines/)
+
 ## Why?
 
 Aside from it just being fun to learn and build things, I do think that it is important to at least imagine a world where our infrastructure is not built by Big Tech. With the climate emergency, rise of fascism, and even just the expense of technology, reclaiming the networks we use to communicate on could be a useful tool for communities.
